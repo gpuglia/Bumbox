@@ -1,0 +1,16 @@
+{{#unless song}}
+  <span class="now-playing-empty">Select a song to start playing.</span>
+{{else}}
+<img class="now-playing-artwork" src={{song.album.artwork}}>
+<div class="now-playing-body">
+  <p class="now-playing-details">
+    <span class="now-playing-name">{{song.name}}</span> -
+    <span class="now-playing-artist">{{song.album.artist}}</span>
+  </p>
+  <div class="now-playing-player">
+    <p class="duration">
+      {{format-duration player.currentTime}}
+    </p>
+  </div>
+</div>
+{{/unless}}
