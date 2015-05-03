@@ -14,7 +14,6 @@ export default Ember.Component.extend({
     return this.get('player.isPlaying') && this.get('isCurrentSong');
   }.property('player.isPlaying', 'isCurrentSong'),
 
-
   actions: {
     play: function() {
       this.get('player').play(this.get('song'));

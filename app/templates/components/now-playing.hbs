@@ -8,8 +8,13 @@
     <span class="now-playing-artist">{{song.album.artist}}</span>
   </p>
   <div class="now-playing-player">
-    <p class="duration">
-      {{format-duration player.currentTime}}
+    {{audio-control isPlaying=player.isPlaying pause='pause' play='resume'}}
+    <p class="duration" {{action 'toggleTime'}}>
+      {{#if showRemainingTime}}
+        {{format-duration player.remainingTime}}
+      {{else}}
+        {{format-duration player.currentTime}}
+      {{/if}}
     </p>
   </div>
 </div>
